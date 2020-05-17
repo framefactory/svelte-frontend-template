@@ -1,5 +1,5 @@
 <script lang="typescript">
-    export let name = "Hello Typescript";
+    export let name: string = "Hello Typescript";
 </script>
 
 <main>
