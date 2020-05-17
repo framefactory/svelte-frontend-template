@@ -1,0 +1,18 @@
+# FOLDERS
+.idea/
+.vscode/
+.cache/
+node_modules/
+
+doc/
+built/
+services/api/bin/
+services/db/data/
+
+# FILES
+.env
+*.log
+.DS_Store
+
+public/bundle.js
+public/bundle.js.map
