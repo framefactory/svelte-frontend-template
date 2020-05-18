@@ -45,9 +45,9 @@ const modules = [
 
 // import aliases
 const alias = {
-    "@ff/browser": "ff-browser/source",
+    "svelte": path.resolve(dirs.modules, 'svelte'),
     "@ff/core": "ff-core/source",
-    "@ff/ui": "ff-ui/source"
+    "@ff/svc": "ff-svc/source",
 };
 
 // project components to be built
@@ -59,7 +59,6 @@ const components = {
         subdir: "",
         entry: "index.ts",
         template: "index.hbs",
-        element: "ff-template",
     }
 };
 
@@ -136,11 +135,9 @@ function createBuildConfiguration(environment, dirs, component)
 
         resolve: {
             modules,
-            alias: {
-                svelte: path.resolve('node_modules', 'svelte')
-            },
+            alias,
             extensions: [".ts", ".js", ".mjs", ".svelte", ".json"],
-            mainFields: ['svelte', 'browser', 'module', 'main']
+            mainFields: ["svelte", "browser", "module", "main"],
         },
 
         optimization: {
@@ -214,7 +211,11 @@ function createBuildConfiguration(environment, dirs, component)
                         options: {
                             emitCss: true,
                             hotReload: true,
-                            preprocess: SveltePreprocess()
+                            preprocess: SveltePreprocess({
+                                typescript: {
+                                    compilerOptions: { noEmit: false },
+                                },
+                            }),
                         }
                     }
                 },

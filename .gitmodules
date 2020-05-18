@@ -1,0 +1,6 @@
+[submodule "libs/ff-core"]
+	path = libs/ff-core
+	url = git@github.com:framefactory/ff-core.git
+[submodule "libs/ff-svc"]
+	path = libs/ff-svc
+	url = git@github.com:framefactory/ff-svc.git

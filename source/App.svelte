@@ -2,10 +2,14 @@
     export let name: string = "Hello Typescript";
 </script>
 
+<!-- MARKUP ------------------------------------------------------------------->
+
 <main>
     <h1>Hello {name}!</h1>
     <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
+
+<!-- STYLES ------------------------------------------------------------------->
 
 <style type="text/scss">
     $color: rgb(172, 35, 153);
