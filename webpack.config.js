@@ -213,6 +213,7 @@ function createBuildConfiguration(environment, dirs, component)
                             hotReload: true,
                             preprocess: SveltePreprocess({
                                 typescript: {
+                                    tsconfigDirectory: ".",
                                     compilerOptions: { noEmit: false },
                                 },
                             }),
