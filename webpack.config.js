@@ -157,7 +157,6 @@ function createBuildConfiguration(environment, dirs, component)
             }),
             new MiniCssExtractPlugin({
                 filename: cssOutputFileName,
-                allChunks: true,
             }),
             new HTMLWebpackPlugin({
                 filename: htmlOutputFileName,
@@ -209,7 +208,7 @@ function createBuildConfiguration(environment, dirs, component)
                     use: {
                         loader: "svelte-loader",
                         options: {
-                            emitCss: true,
+                            //emitCss: true,
                             hotReload: true,
                             preprocess: SveltePreprocess({
                                 typescript: {
@@ -218,6 +217,12 @@ function createBuildConfiguration(environment, dirs, component)
                                 },
                             }),
                         }
+                    }
+                },
+                {
+                    test: /node_modules\/svelte\/.*\.mjs$/,
+                    resolve: {
+                        fullySpecified: false // load Svelte correctly
                     }
                 },
             ]
