@@ -220,6 +220,7 @@ function createBuildConfiguration(environment, dirs, component)
                     }
                 },
                 {
+                    // fix for https://github.com/sveltejs/svelte-loader/issues/139#issuecomment-724702962
                     test: /node_modules\/svelte\/.*\.mjs$/,
                     resolve: {
                         fullySpecified: false // load Svelte correctly
