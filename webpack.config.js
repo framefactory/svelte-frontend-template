@@ -1,6 +1,6 @@
 /**
  * Webpack configuration
- * Svelte / Typescript / SCSS
+ * Svelte / Typescript / PostCSS / Tailwind CSS
  */
 
 "use strict";
@@ -179,22 +179,14 @@ function createBuildConfiguration(environment, dirs, component)
                     },
                 },
                 {
-                    // SCSS
-                    test: /\.s[ac]ss$/i,
-                    use: [
-                        MiniCssExtractPlugin.loader,
-                        "css-loader",
-                        "sass-loader",
-                    ],
-                },
-                {
                     // CSS
                     test: /\.css$/,
                     use: [
                         // MiniCssExtractPlugin doesn't support hot reloading.
                         // During development, embed styles with "style-loader".
                         isDevMode ? "style-loader" : MiniCssExtractPlugin.loader,
-                        "css-loader"
+                        "css-loader",
+                        "postcss-loader",
                     ]
                 },
                 {
@@ -208,13 +200,20 @@ function createBuildConfiguration(environment, dirs, component)
                     use: {
                         loader: "svelte-loader",
                         options: {
-                            //emitCss: true,
-                            hotReload: true,
+                            //emitCss: true, // see fix below
+                            hotReload: isDevMode,
                             preprocess: SveltePreprocess({
                                 typescript: {
                                     tsconfigDirectory: ".",
                                     compilerOptions: { noEmit: false },
                                 },
+                                postcss: {
+                                    plugins: [
+                                        require("tailwindcss"),
+                                        require("autoprefixer"),
+                                    ]
+                                },
+                                sourceMap: isDevMode,
                             }),
                         }
                     }
@@ -235,7 +234,12 @@ function createBuildConfiguration(environment, dirs, component)
             sockHost: process.env["DEV_SERVER_WEBSOCKET_HOST"],
             sockPort: process.env["DEV_SERVER_WEBSOCKET_PORT"],
             port: process.env["DEV_SERVER_PORT"],
-            disableHostCheck: true
+            disableHostCheck: true,
+            before: function(app /* , server, compiler */) {
+                app.get("/", function(req, res) {
+                    res.redirect(`${components.default.bundle}.dev.html`);
+                });
+            }
         }
     }
 }

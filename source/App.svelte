@@ -1,34 +1,23 @@
 <script lang="typescript">
-    export let name: string = "Hello Typescript";
+    import { noop } from "svelte/internal";
 </script>
 
-<!-- MARKUP ------------------------------------------------------------------->
-
-<main>
-    <h1>Hello {name}!</h1>
-    <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<!-- STYLES ------------------------------------------------------------------->
-
-<style type="text/scss">
-    $color: rgb(172, 35, 153);
-
-    main {
-        text-align: center;
-        padding: 1em;
-        max-width: 240px;
-        margin: 0 auto;
+<style global src="./global.css">
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+    body {
+        @apply bg-color-800 text-color-100 font-sans;
     }
-    h1 {
-        color: $color;
-        text-transform: uppercase;
-        font-size: 4em;
-        font-weight: 100;
-    }
-    @media (min-width: 640px) {
-        main {
-            max-width: none;
-        }
+    a {
+        @apply text-primary-500;
     }
 </style>
+
+<template>
+    <h1 class="text-secondary-600">Hello World!</h1>
+    <p>
+        Visit the
+        <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
+        to learn how to build Svelte apps.
+    </p>
+</template>

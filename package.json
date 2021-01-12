@@ -1,47 +1,56 @@
 {
-  "name": "svelte-frontend-template",
-  "version": "1.0.1",
-  "description": "Template for building basic applications with Svelte, Typescript, SASS",
-  "main": "index.js",
-  "scripts": {
-    "build": "npm run build:prod",
-    "build:dev": "NODE_ENV=development webpack",
-    "build:prod": "NODE_ENV=production webpack",
-    "dev": "NODE_ENV=development webpack-dev-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/framefactory/svelte-frontend-template.git"
-  },
-  "author": "Ralph",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/framefactory/svelte-frontend-template/issues"
-  },
-  "homepage": "https://github.com/framefactory/svelte-frontend-template#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "child-process": "1.0.2",
-    "css-loader": "5.0.1",
-    "dotenv": "^8.2.0",
-    "handlebars": "^4.7.6",
-    "handlebars-loader": "^1.7.1",
-    "html-webpack-plugin": "^4.5.1",
-    "mini-css-extract-plugin": "^1.3.3",
-    "mkdirp": "^1.0.4",
-    "node-sass": "^5.0.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "sass": "^1.32.2",
-    "sass-loader": "^10.1.0",
-    "style-loader": "^2.0.0",
-    "svelte": "^3.31.2",
-    "svelte-loader": "^2.13.6",
-    "svelte-preprocess": "^4.6.1",
-    "terser-webpack-plugin": "^5.0.3",
-    "ts-loader": "^8.0.14",
-    "typescript": "^4.1.3",
-    "webpack": "^5.12.1",
-    "webpack-cli": "3.3.12",
-    "webpack-dev-server": "^3.11.1"
-  }
+    "name": "svelte-frontend-template",
+    "version": "1.0.2",
+    "description": "Front-end application template with Svelte, Typescript, Tailwind CSS",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run build:prod",
+        "build:dev": "NODE_ENV=development webpack",
+        "build:prod": "NODE_ENV=production webpack",
+        "dev": "NODE_ENV=development webpack-dev-server"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/framefactory/svelte-frontend-template.git"
+    },
+    "author": {
+        "name": "Ralph Wiedemeier",
+        "url": "https:/github.com/framefactory"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/framefactory/svelte-frontend-template/issues"
+    },
+    "homepage": "https://github.com/framefactory/svelte-frontend-template#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.13.0",
+        "@typescript-eslint/parser": "^4.13.0",
+        "autoprefixer": "^10.2.1",
+        "child-process": "1.0.2",
+        "css-loader": "5.0.1",
+        "dotenv": "^8.2.0",
+        "eslint": "^7.17.0",
+        "eslint-config-prettier": "^7.1.0",
+        "handlebars": "^4.7.6",
+        "handlebars-loader": "^1.7.1",
+        "html-webpack-plugin": "^4.5.1",
+        "mini-css-extract-plugin": "^1.3.3",
+        "mkdirp": "^1.0.4",
+        "optimize-css-assets-webpack-plugin": "^5.0.4",
+        "postcss": "^8.2.4",
+        "postcss-loader": "^4.1.0",
+        "prettier": "^2.2.1",
+        "style-loader": "^2.0.0",
+        "svelte": "^3.31.2",
+        "svelte-loader": "^2.13.6",
+        "svelte-preprocess": "^4.6.1",
+        "tailwindcss": "^2.0.2",
+        "terser-webpack-plugin": "^5.0.3",
+        "ts-loader": "^8.0.14",
+        "typescript": "^4.1.3",
+        "webpack": "^5.12.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.1"
+    }
 }
