@@ -39,15 +39,16 @@ const dirs = {
 
 // module search paths
 const modules = [
-//    dirs.libs,
+    dirs.libs,
     dirs.modules,
 ];
 
 // import aliases
 const alias = {
     "svelte": path.resolve(dirs.modules, 'svelte'),
-//    "@ff/core": "ff-core/source",
-//    "@ff/svc": "ff-svc/source",
+    "@ff/browser": path.resolve(dirs.libs, "ff-browser/source"),
+    "@ff/core": path.resolve(dirs.libs, "ff-core/source"),
+    "@ff/svc": path.resolve(dirs.libs, "ff-svc/source"),
 };
 
 // project components to be built

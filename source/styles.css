@@ -1,0 +1,14 @@
+/**
+ * Svelte Frontend Template
+ * Copyright 2021 Frame Factory GmbH, Ralph Wiedemeier
+ * License: MIT
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+    
+body {
+    @apply font-sans bg-color-back text-color-text;
+}
+a {
+    @apply text-color-text;
+}

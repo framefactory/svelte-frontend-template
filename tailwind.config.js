@@ -1,27 +1,38 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-    purge: [],
+    purge: [
+        "./source/**/*.svelte",
+        "./libs/ff-svc/source/**/*.svelte",
+    ],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {},
+        extend: {
+            borderRadius: {
+                DEFAULT: "0.2rem"
+            },
+            outline: {
+                DEFAULT: ["2px solid #72777E", "1px"],
+            }
+        },
         colors: {
             // generated with https://www.tailwindshades.com/
             transparent: "transparent",
             current: "currentColor",
 
             color: {
-                DEFAULT: "#ECEDEE",
-                '50': '#ECEDEE',
-                '100': '#DEE0E3',
-                '200': '#C3C7CB',
-                '300': '#A8ADB3',
-                '400': '#8C949B',
-                '500': '#51575D',
-                '600': '#42474C',
-                '700': '#34383C',
-                '800': '#26292C',
-                '900': '#181A1B',
+                "back":            "#1C1C1C",
+                "frame-low":       "#252525",
+                "frame":           "#282828",
+                "frame-high":      "#2b2b2b",
+                "widget":          "#404040",
+                "widget-hover":    "#4b4b4b",
+                "widget-selected": "#555555",
+                "icon":            "#b8b8b8",
+                "icon-disabled":   "#91969C",
+                "text":            "#E9E9E9",
+                "text-dimmed":     "#C9C9C9",
+                "text-disabled":   "#b8b8b8",
             },
             primary: {
                 DEFAULT: "#C57134",
